@@ -54,3 +54,14 @@ public class Args implements Iterable<String>{
         return grep;
     }
 }
+
+//コマンドラインオプションを解析する処理
+private Args parseArguments(String[] arguments){
+        Args args = new Args();
+        try {
+            CmdLineParser parser = new CmdLineParser(args);
+            parser.parseArgument(arguments);
+        } catch (CmdLineException e) {
+        }
+        return args;
+    }
